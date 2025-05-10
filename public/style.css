@@ -1,0 +1,150 @@
+body{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+
+}
+.container{
+   flex: 1;
+}
+.btn-dark{
+   background-color: #fe424d !important;
+   border: none !important;
+}
+/*nav bar*/
+ .fa-compass{
+    font-size: 3rem;
+    color: #fe424d;
+ }
+ .nav-link{
+    color: black !important;
+    font-weight: 800;
+ }
+ .navbar{
+    height: 7rem;
+    background-color: white;
+ }
+
+
+/* footer */
+
+ footer{
+    height: 8rem;
+    background-color: rgb(238, 237, 237);
+   position: sticky;
+  
+ }
+ .policylinks a{
+    text-decoration: none;
+    color: black;
+ }
+ .policylinks a:hover{
+    text-decoration: underline;
+    color: blue;
+ }
+ .sociallinks{
+    font-size: 1.2rem;
+ }
+.info{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+ .fa-brands{
+margin: 10px;
+}
+.policylinks a{
+    margin: 5px;
+    
+}
+.sociallinks,.brandnam,.policylinks{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.policylinks{
+    margin: 10px;
+}
+.brandnam{
+    margin-top: 7px;
+}
+
+/* styling img */
+.card-img-top{
+   border-radius: 1rem !important;
+   width: 100% !important;
+   object-fit: cover !important;
+
+}
+/*cards*/
+.card{
+   border: none !important;
+   /* margin: 2rem; */
+}
+.card-body{
+   padding: 0 !important;
+}
+.card-text{
+margin-bottom: 30px;
+
+}
+.alink{
+   text-decoration: none;
+   color: black;
+   opacity: 0.9;
+}
+.alink:hover{
+   opacity:0.6 ;
+   background-color: #f1babd;
+}
+/*show*/
+.btns {
+   display:flex ;
+}
+.show-edit{
+   background-color: #fe424d !important;
+   margin: 40px;
+   padding: 5px;
+   width: 100%;
+   color: whitesmoke;
+   font-size: larger;
+   border: none;
+   border-radius: 5px;
+
+}
+.show-edit1{
+   background-color:green;
+   margin: 40px 20px 1px 60px;
+   padding: 5px;
+   width: 100%;
+   color: whitesmoke;
+   font-size: larger;
+   border: none;
+   border-radius: 5px;
+
+}
+.showimg{
+   height: 30vh;
+}
+.review-card{
+   border: 1px solid black!important;
+}
+.sufiyan{
+   margin: -60px 5px 10px 5px;
+   width: 25%;
+}
+.commnt{
+   margin-top:5px;
+}
+.rating input[type="range"]{
+   width: 475px;
+}
+
+
+/*map*/
+#map {
+   height: 300px;
+   width: 100%;
+ }

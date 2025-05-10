@@ -1,0 +1,55 @@
+
+  <% layout("/layout/boilerplate")-%>
+  <body>
+  <div>
+    <h1 style="text-align: center;">You are Editing &#x1f194;:<%=data.id%></h1><br><br>
+  </div>
+  <div class="row">
+    <div class="col-8 offset-2">
+    <form action="/listings/<%=data.id%>?_method=PATCH" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label"><b>Title</b></label>
+        <input type="text" name="listing[title]" value="<%=data.title%>" class="form-control" id="title" required>
+        <div class="valid-feedback">Look's Good</div>
+      </div>
+      <div class="mb-3">
+        <label for="Description" class="form-label"><b>Description</b></label>
+        <textarea name="listing[description]" id="Description" class="form-control" rows="3" cols="60" required><%=data.description%></textarea>
+        <div class="invalid-feedback">enter description more than 20 words</div>
+      </div>
+      <div>
+        <p><b>Original Listing Image</b></p>
+        <img src="<%=originalimageurl%>" alt="">
+      </div>
+      
+      <div>
+        <label for="imgupload" class="form-label"><b>Upload Image</b></label>
+        <input type="file"  name="listing[imgupload]" id="imgupload" class="form-control">
+    </div>
+
+      <div class="row col">
+      <div class="mb-3 col-md-4">
+        <label for="Price" class="form-label"><b>Price</b></label>
+        <input type="number" name="listing[price]" id="Price" class="form-control" value="<%=data.price%>" required>
+        <div class="valid-feedback">Look's Good</div>
+
+      </div>
+      <div class="mb-3 col-md-8">
+        <label for="Location" class="form-label"><b>Location</b></label>
+        <input type="text" id="Location" name="listing[location]" class="form-control" value="<%=data.location%>" required>
+        <div class="valid-feedback">Look's Good &#128128;</div>
+
+      </div>
+    </div>
+      <div class="mb-3">
+        <label for="Country" class="form-label"><b>Country</b></label>
+        <input type="text" id="Country" name="listing[country]" class="form-control" value="<%=data.country%>" required>
+        <div class="valid-feedback">Look's Good &#128128;</div>
+
+      </div> <br><br>
+    <button class="btn btn-dark edit-btn">Submit</button>
+</form>
+</div>
+</div>
+    
+</body>

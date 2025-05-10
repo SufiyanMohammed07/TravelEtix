@@ -1,0 +1,28 @@
+<% layout("/layout/boilerplate")-%>
+
+  <form action="/listings/<%=Listing._id%>/<%=reviewdata._id%>?_method=PATCH" method="post">
+    <div class="wholediv">
+    <div class="com mb-3 mt-5">
+      <div class="commnt mb-4">
+    <label for="comment"><b>Comment:</b></label></div>
+    <textarea name="listing[comment]" id="comment" placeholder="" rows="5" cols="60"><%=passcomment%></textarea></div>
+    <div class="rating mb-3 mt-3">
+      <div class="rat mb-3">
+    <label for="rating"><b>Rating</b></label></div>
+
+    <fieldset class="starability-slot">
+    <input type="radio" id="first-rate1" name="listing[rating]" value="1" />
+    <label for="first-rate1" title="Terrible">1 star</label>
+    <input type="radio" id="first-rate2" name="listing[rating]" value="2" />
+    <label for="first-rate2" title="Not good">2 stars</label>
+    <input type="radio" id="first-rate3" name="listing[rating]" value="3" />
+    <label for="first-rate3" title="Average">3 stars</label>
+    <input type="radio" id="first-rate4" name="listing[rating]" value="4" />
+    <label for="first-rate4" title="Very good">4 stars</label>
+    <input type="radio" id="first-rate5" name="listing[rating]" value="5" />
+    <label for="first-rate5" title="Amazing">5 stars</label>
+  </fieldset>
+  </div>
+    <button class="btn btn-dark mt-4"><b>Submit</b></button>
+    </form>
+  
