@@ -109,7 +109,7 @@ app.use((err, req, res, next) => {
   res.status(statuscode).send(message);
 });
 
-app.listen(port,'0.0.0.0', () => {
+app.listen(port, () => {
   console.log("server is listeneing on", port);
 });
 
