@@ -49,9 +49,9 @@ main()
 async function main() {
   await mongoose.connect(dbAtlasurl);
 }
-app.get("/", (req, res) => {
-  console.log("working...");
-});
+// app.get("/", (req, res) => {
+//   console.log("working...");
+// });
 // -----------------------------------------------------------Establishment completed
 
 
