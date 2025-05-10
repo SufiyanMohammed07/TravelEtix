@@ -32,7 +32,7 @@ const Routerlistings = require("./routes/listing.js");
 const Routerreviews = require("./routes/review.js");
 const Routeruser=require("./routes/user.js");
 const { send } = require("process");
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 let dbAtlasurl=process.env.ATLAS_URL;
 
@@ -109,7 +109,7 @@ app.use((err, req, res, next) => {
   res.status(statuscode).send(message);
 });
 
-app.listen(port, () => {
+app.listen(port,'0.0.0.0', () => {
   console.log("server is listeneing on", port);
 });
 
