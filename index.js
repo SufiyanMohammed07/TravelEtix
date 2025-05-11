@@ -49,6 +49,7 @@ async function main() {
 }
 app.get("/", (req, res) => {
   console.log("working...");
+  res.send("this is root path it is working");
 });
 // -----------------------------------------------------------Establishment completed
 
@@ -95,9 +96,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/",(req,res)=>{
-  res.send("App is working");
-})
+
 app.use("/listings", Routerlistings);
 app.use("/listings/:id", Routerreviews);
 app.use("/", Routeruser);
