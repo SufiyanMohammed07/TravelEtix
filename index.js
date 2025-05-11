@@ -31,7 +31,7 @@ const Routerlistings = require("./routes/listing.js");
 const Routerreviews = require("./routes/review.js");
 const Routeruser = require("./routes/user.js");
 const { send } = require("process");
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 
 let dbAtlasurl = process.env.ATLAS_URL;
 
