@@ -95,6 +95,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/",(req,res)=>{
+  res.send("App is working");
+})
 app.use("/listings", Routerlistings);
 app.use("/listings/:id", Routerreviews);
 app.use("/", Routeruser);
@@ -104,6 +107,6 @@ app.use((err, req, res, next) => {
   res.status(statuscode).send(message);
 });
 
-app.listen(port, () => {
+app.listen(port,'0.0.0.0', () => {
   console.log("server is listeneing on", port);
 });
