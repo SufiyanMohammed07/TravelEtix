@@ -1,54 +1,69 @@
     <% layout("/layout/boilerplate")-%>
     <style>
-      .filters{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .filter{
-        text-align: center;
-        margin-left: 2rem;
-        margin-top: 1rem;
-        opacity: 1;
-        
-      }
-      .filter .fa-solid:hover{
-        opacity: 0.5;
-        cursor: pointer;
-      }
-      .filter p{
-        font-size: 0.8rem;
-      }
-      .tax{
-        display: none;
-      }
-      .tax-toggle{
-        border: 2px solid black;
-        border-radius: 9px;
-        height: 3.2rem;
-        margin-left: 3rem;
-        display: flex;
-        align-items: center;
-        padding: 15px;
-      }
-      @media (max-width: 768px) {
-        .filters {
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          justify-content: flex-start;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none; /* Firefox */
-        }
-      
-        .filters::-webkit-scrollbar {
-          display: none; /* Chrome, Safari */
-        }
-      
-        .filter {
-          flex: 0 0 auto;
-          min-width: 100px;
-        }
-      }
+      .filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.filter {
+  text-align: center;
+  opacity: 1;
+  flex: 0 0 auto;
+}
+
+.filter .fa-solid:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+/* ✅ Tax toggle styling made consistent with filters */
+.tax-toggle {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 9px;
+  height: 4rem;
+  padding: 0 1rem;
+  background-color: white;
+  white-space: nowrap;
+}
+
+/* ✅ Responsive behavior: everything stays in one line and scrolls horizontally */
+@media (max-width: 768px) {
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .filter,
+  .tax-toggle {
+    flex: 0 0 auto;
+    min-width: 100px;
+  }
+
+  .tax-toggle {
+    height: 4rem; /* keeps consistent height */
+    margin-top: 0;
+  }
+}
+
     </style>
     <div class="filters">
       <div class="filter">
@@ -76,6 +91,14 @@
         <p>Tropical</p>
       </div>
       <div class="filter">
+        <div><i class="fa-solid fa-hurricane"></i></div>
+        <p>Tropical</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-hurricane"></i></div>
+        <p>Tropical</p>
+      </div>
+      <div class="filter">
         <div><i class="fa-solid fa-tree"></i></div>
         <p>Campfire</p>
       </div>
@@ -83,6 +106,8 @@
         <div><i class="fa-solid fa-mountain-sun"></i></div>
         <p>Mountain cities</p>
       </div>
+       
+       
       <div class="filter">
         <div><i class="fa-solid fa-water-ladder"></i></div>
         <p>Amazing pools</p>
