@@ -1,60 +1,111 @@
-<style>
+ <style>
   .btn-search {
     background-color: #fe424d;
     color: white;
     border-radius: 25px;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem;
+    transition: background-color 0.2s ease;
   }
+
   .btn-search:hover {
-    background-color: #fe424d;
+    background-color: #ff6666; /* lighter red on hover */
     color: white;
   }
+
+  .btn-search:active {
+    background-color: #c0392b; /* darker red when clicked */
+    color: #fff;
+    transform: scale(0.97); /* small click animation */
+  }
+
+  .btn-search:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(254, 66, 77, 0.4);
+  }
+
   .btn-search i {
-    display: inline;
     margin-right: 0.5rem;
   }
+
   .nav-search {
     border-radius: 25px;
-    padding: 0.5rem 4rem 0.5rem 4rem;
-    min-width: 200px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 400px;
   }
-  .navbar-nav{
+
+  .navbar-nav {
     align-items: center;
+    
   }
+ 
+
+  /* Responsive Fix */
   @media (max-width: 768px) {
+    .navbar-collapse {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 1rem;
+      z-index: 999;
+    }
+
     .navbar-nav {
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
       width: 100%;
+      gap: 0.5rem;
+     
+
     }
-  
-    .nav-search {
+    .navbar-nav .nav-link{
+      background-color: #ff6666;
       width: 100%;
+      border-radius: 10px;
+      opacity: 1;
+     
+    }
+
+    .navbar-brand {
       margin-bottom: 0.5rem;
     }
-  
-    .btn-search {
-      width: 100%;
-    }
-  
+
     form.d-flex {
+      display: flex;
       flex-direction: column;
       align-items: stretch;
       width: 100%;
+      gap: 0.5rem;
     }
-  
-    .navbar-collapse {
-      padding-top: 1rem;
+
+    .btn-search {
+      width: 100%;
     }
-  
-    .navbar-brand {
-      margin-bottom: 0.5rem;
+
+    .nav-search {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    /* Keep toggle section from overlapping listings */
+    nav.navbar {
+      position: relative;
+      z-index: 1000;
+    }
+
+    /* Prevent input focus expansion from overlapping content */
+    .nav-search:focus {
+      box-shadow: 0 0 0 3px rgba(254, 66, 77, 0.3);
+      outline: none;
+      background-color: #fff;
     }
   }
 </style>
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><i class="fa-solid fa-compass"></i></a>
+
+    <!-- Mobile toggle -->
     <button
       class="navbar-toggler"
       type="button"
@@ -66,12 +117,17 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Collapsible Navbar -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- Left Side Links -->
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="/listings"><b>Home</b></a>
+        <a class="nav-link" href="/listings"><b>Home</b></a>
         <a class="nav-link" href="/listings"><b>Explore</b></a>
       </div>
-      <div class="navbar-nav ms-auto ">
+
+      <!-- Search Bar -->
+      <div class="navbar-nav ms-auto w-100 w-md-auto">
         <form class="d-flex" role="search">
           <input
             class="form-control nav-search me-2"
@@ -84,16 +140,18 @@
           </button>
         </form>
       </div>
-    </div>
-    <div class="navbar-nav ms-0">
-      <div class="navbar-nav ms-0 d-none d-md-flex">
-      <a class="nav-link " href="/listings/new"><b>Wanderlust your home</b></a></div>
-      <%if(!curruser){%>
-      <a class="nav-link" aria-current="page" href="/signup"><b>SignUp</b></a>
-      <a class="nav-link" href="/login"><b>Login</b></a>
-      <%}%> <% if(curruser){%>
-      <a class="nav-link" href="/logout"><b>LogOut</b></a>
-      <%}%>
+
+      <!-- Auth Links -->
+      <div class="navbar-nav ms-md-3 mt-2 mt-md-0">
+        <a class="nav-link" href="/listings/new"><b>Create a New Listing</b></a>
+        <% if (!curruser) { %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %>
+        <% if (curruser) { %>
+          <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        <% } %>
+      </div>
     </div>
   </div>
 </nav>
